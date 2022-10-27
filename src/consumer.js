@@ -6,14 +6,33 @@
  * to the consumer after the user clicks the buttons.
  * */
 
+const displayMessage = (str) => {
+  window.document.getElementById("result-message").innerText = str;
+};
 window.document
   .getElementById("dialogOne")
   .addEventListener("dialogOneAcceptEvent", ({ detail }) => {
     console.log("consumer has listend for accept event", detail);
+    displayMessage(detail.value);
   });
 
 window.document
   .getElementById("dialogOne")
   .addEventListener("dialogOneCancelEvent", ({ detail }) => {
     console.log("consumer has listend for accept event", detail);
+    displayMessage(detail.value);
+  });
+
+window.document
+  .getElementById("dialogTwo")
+  .addEventListener("dialogTwoAcceptEvent", ({ detail }) => {
+    console.log("consumer has listend for accept event", detail);
+    displayMessage(detail.value);
+  });
+
+window.document
+  .getElementById("dialogTwo")
+  .addEventListener("dialogTwoCancelEvent", ({ detail }) => {
+    console.log("consumer has listend for accept event", detail);
+    displayMessage(detail.value);
   });

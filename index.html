@@ -4,24 +4,38 @@
     <link rel="stylesheet" href="/src/css/dialog.css" />
     <script type="module" src="/src/entry.js"></script>
     <script type="module" src="/src/consumer.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>This is a skills test</h1>
+    <img src="assets/doge.jpg" />
+    <h1>This is a skills test. Much Wow!</h1>
     <button id="button-1">Click Me</button>
-    <button id="button-2">Click Me (2)</button>
+    <button id="button-2">Buy DogeCoin!</button>
     <div id="dialog-wrapper">
       <div
         id="dialogOne"
         data-id="modal"
         @message="This is a message from DialogOne. Are you sure you want to continue?"
         @button="button-1"
+        @accept-message="This is a success message from DialogOne!"
+        @dismiss-message="Goodbye!"
       ></div>
       <div
         id="dialogTwo"
         data-id="modal"
-        @message="This is a message from DialogTwo. Did you already eat?"
+        @message="Buy dogecoin for free!?!?!?!?!!?!?!!?!?"
         @button="button-2"
+        @accept-message="Much Wow! Transferred 10 Doge and 2 Cate."
+        @dismiss-message="Not Wow!"
       ></div>
     </div>
+
+    <div id="result-message"></div>
   </body>
 </html>

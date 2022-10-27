@@ -2,7 +2,7 @@ import Component from "./component.js";
 
 export default class Dialog extends Component {
   setActiveModal(value) {
-    this.component.style.display = value ? "block" : "none";
+    this.component.style.display = value ? "flex" : "none";
   }
   ready() {
     //ready for rendering
@@ -18,7 +18,16 @@ export default class Dialog extends Component {
     });
 
     const messageAttr = this.getParam(this.component, "message");
-    const TEMPLATE = `<span>${messageAttr}</span><button id="${this.elementId}-accept">Ok</button><button id="${this.elementId}-cancel">Cancel</button>`;
+    const TEMPLATE = `<div class="modal">
+        <div class="modal-message">
+            <span>${messageAttr}</span>
+        </div>
+        <br>
+        <div class="modal-actions">
+            <button id="${this.elementId}-accept">Ok</button>
+            <button id="${this.elementId}-cancel">Cancel</button>
+        </div>
+    </div>`;
     this.component.innerHTML = TEMPLATE;
 
     // modal for button event listeners
@@ -32,7 +41,7 @@ export default class Dialog extends Component {
     ACCEPT.addEventListener("click", () => {
       const event = new CustomEvent(`${this.elementId}AcceptEvent`, {
         detail: {
-          value: true,
+          value: this.getParam(this.component, "accept-message"),
         },
       });
       this.component.dispatchEvent(event);
@@ -42,13 +51,11 @@ export default class Dialog extends Component {
     CANCEL.addEventListener("click", () => {
       const event = new CustomEvent(`${this.elementId}CancelEvent`, {
         detail: {
-          value: false,
+          value: this.getParam(this.component, "dismiss-message"),
         },
       });
       this.component.dispatchEvent(event);
       this.setActiveModal(false);
     });
-
-    //add event
   }
 }
