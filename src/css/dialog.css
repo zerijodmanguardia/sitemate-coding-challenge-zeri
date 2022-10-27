@@ -4,7 +4,7 @@ html{
     background: linear-gradient(90deg, rgba(155,106,50,1) 0%, rgba(240,244,151,1) 100%);
 }
 
-[data-id="modal"]{
+.dialog-component{
     display: none;
     z-index: 1;
     position: absolute;
