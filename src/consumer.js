@@ -13,26 +13,26 @@ window.document
   .getElementById("dialogOne")
   .addEventListener("dialogOneAcceptEvent", ({ detail }) => {
     console.log("consumer has listend for accept event", detail);
-    displayMessage(detail.value);
+    displayMessage(detail.message);
   });
 
 window.document
   .getElementById("dialogOne")
   .addEventListener("dialogOneCancelEvent", ({ detail }) => {
     console.log("consumer has listend for accept event", detail);
-    displayMessage(detail.value);
+    displayMessage(detail.message);
   });
 
 window.document
   .getElementById("dialogTwo")
   .addEventListener("dialogTwoAcceptEvent", ({ detail }) => {
     console.log("consumer has listend for accept event", detail);
-    displayMessage(detail.value);
+    displayMessage(detail.message);
   });
 
 window.document
   .getElementById("dialogTwo")
   .addEventListener("dialogTwoCancelEvent", ({ detail }) => {
     console.log("consumer has listend for accept event", detail);
-    displayMessage(detail.value);
+    displayMessage(detail.message);
   });

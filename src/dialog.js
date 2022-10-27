@@ -41,7 +41,8 @@ export default class Dialog extends Component {
     ACCEPT.addEventListener("click", () => {
       const event = new CustomEvent(`${this.elementId}AcceptEvent`, {
         detail: {
-          value: this.getParam(this.component, "accept-message"),
+          value: false,
+          message: this.getParam(this.component, "accept-message"),
         },
       });
       this.component.dispatchEvent(event);
@@ -51,7 +52,8 @@ export default class Dialog extends Component {
     CANCEL.addEventListener("click", () => {
       const event = new CustomEvent(`${this.elementId}CancelEvent`, {
         detail: {
-          value: this.getParam(this.component, "dismiss-message"),
+          value: false,
+          message: this.getParam(this.component, "dismiss-message"),
         },
       });
       this.component.dispatchEvent(event);
