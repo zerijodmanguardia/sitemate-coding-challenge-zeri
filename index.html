@@ -3,12 +3,25 @@
   <head>
     <link rel="stylesheet" href="/src/css/dialog.css" />
     <script type="module" src="/src/entry.js"></script>
+    <script type="module" src="/src/consumer.js"></script>
   </head>
   <body>
     <h1>This is a skills test</h1>
-    <button>Click Me</button>
+    <button id="button-1">Click Me</button>
+    <button id="button-2">Click Me (2)</button>
     <div id="dialog-wrapper">
-      <div id="dialog-component" data-message="this is a message"></div>
+      <div
+        id="dialogOne"
+        data-id="modal"
+        @message="This is a message from DialogOne. Are you sure you want to continue?"
+        @button="button-1"
+      ></div>
+      <div
+        id="dialogTwo"
+        data-id="modal"
+        @message="This is a message from DialogTwo. Did you already eat?"
+        @button="button-2"
+      ></div>
     </div>
   </body>
 </html>

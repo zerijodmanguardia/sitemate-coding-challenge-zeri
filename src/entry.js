@@ -2,4 +2,5 @@
 import { default as Dialog } from "./dialog.js";
 
 //initialize
-new Dialog();
+new Dialog("dialogOne");
+new Dialog("dialogTwo");

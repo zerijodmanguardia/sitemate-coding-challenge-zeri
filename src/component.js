@@ -1,14 +1,16 @@
 export default class Component {
-  constructor() {
+  constructor(elementId) {
     this.window = window;
+    this.elementId = elementId;
+
     this.window.addEventListener("load", () => {
-      console.log("DOM is ready!");
+      this.component = this.window.document.getElementById(this.elementId);
       this.ready();
     });
   }
 
-  getParams(paramName) {
-    retrun;
+  getParam(element, paramName) {
+    return element.getAttribute(`@${paramName}`);
   }
 
   //this is an abstract method that should be overriden
