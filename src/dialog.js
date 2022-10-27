@@ -41,7 +41,7 @@ export default class Dialog extends Component {
     ACCEPT.addEventListener("click", () => {
       const event = new CustomEvent(`${this.elementId}AcceptEvent`, {
         detail: {
-          value: false,
+          value: true,
           message: this.getParam(this.component, "accept-message"),
         },
       });
